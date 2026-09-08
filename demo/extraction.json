@@ -1,0 +1,18 @@
+[
+  {
+    "deprecated_symbol": "mylib.foo",
+    "change_type": "renamed",
+    "replacement_symbol": "mylib.bar",
+    "migration_rule": "Replace calls to `mylib.foo(a, b)` with `mylib.bar(a, b=b)` (pass `b` as a keyword argument).",
+    "code_example_before": "result = mylib.foo(1, 2)",
+    "code_example_after": "result = mylib.bar(1, b=2)"
+  },
+  {
+    "deprecated_symbol": "mylib.process_items.count",
+    "change_type": "type_changed",
+    "replacement_symbol": "mylib.process_items(count as str)",
+    "migration_rule": "Convert integer `count` arguments to strings when calling `mylib.process_items(items, count)`.",
+    "code_example_before": "mylib.process_items(items, 10)",
+    "code_example_after": "mylib.process_items(items, \"10\")"
+  }
+]

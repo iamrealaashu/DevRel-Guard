@@ -1,0 +1,14 @@
+[
+  {
+    "line_number": 6,
+    "affected_code": "    result = mylib.foo(1, 2)",
+    "rule_matched": "mylib.foo -> mylib.bar (renamed + signature change)",
+    "reason": "`mylib.foo` was removed in the new version; callers must use `mylib.bar` and pass the second argument as a keyword `b=`."
+  },
+  {
+    "line_number": 7,
+    "affected_code": "    mylib.process_items(items, 5)",
+    "rule_matched": "mylib.process_items.count type_changed",
+    "reason": "`process_items` now expects `count` as a string; passing an int may raise a TypeError or change behavior."
+  }
+]

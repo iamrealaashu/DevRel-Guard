@@ -1,0 +1,13 @@
+mylib 1.2.0 -> 2.0.0
+
+BREAKING CHANGES
+- The function `mylib.foo(a, b)` has been removed and replaced by `mylib.bar(a, *, b=None)`.
+  * `bar` requires `b` to be passed as a keyword argument now; positional `b` is rejected.
+  * Example:
+    - Before: `mylib.foo(1, 2)`
+    - After:  `mylib.bar(1, b=2)`
+
+- The parameter `count` on `mylib.process_items(items, count)` changed type from `int` to `str`.
+  * Callers must now pass `count` as a string (e.g., "10") or convert their ints to strings.
+  * Before: `mylib.process_items(items, 10)`
+  * After:  `mylib.process_items(items, "10")`

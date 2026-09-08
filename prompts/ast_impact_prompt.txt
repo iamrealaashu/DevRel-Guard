@@ -1,0 +1,21 @@
+You are a Lead Software Architect. Given a set of breaking change rules and a user's code file, identify all locations where the code will fail or behave incorrectly due to the dependency update.
+
+File Name: {file_name}
+Language: {language}
+Source Code:
+---
+{source_code}
+---
+
+Breaking Change Rules:
+---
+{breaking_change_rules_json}
+---
+
+Analyze the AST and logic. Return a JSON list of identified issues:
+1. "line_number": The line where the breaking change occurs.
+2. "affected_code": The exact line or snippet of code.
+3. "rule_matched": The specific deprecation or change rule triggered.
+4. "reason": Why this code breaks under the new version.
+
+If no code is affected, return an empty array `[]`. Return ONLY JSON.
