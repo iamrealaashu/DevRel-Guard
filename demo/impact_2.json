@@ -1,0 +1,14 @@
+[
+  {
+    "line_number": 6,
+    "affected_code": "    result = mylib.foo(1, 2)",
+    "rule_matched": "mylib.foo -> mylib.bar (renamed + signature change)",
+    "reason": "`mylib.foo` was removed; use `mylib.bar(a, b=b)`."
+  },
+  {
+    "line_number": 7,
+    "affected_code": "    mylib.process_items(items, 5)",
+    "rule_matched": "mylib.process_items.count type_changed",
+    "reason": "`count` argument is a non-string constant; must be a string in new API."
+  }
+]

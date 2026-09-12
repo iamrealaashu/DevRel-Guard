@@ -1,0 +1,5 @@
+{
+  "explanation": "Replace `mylib.foo` calls with `mylib.bar` using a keyword for the second parameter and convert numeric `count` arguments to strings.",
+  "original_code": "import mylib\n\n\ndef compute():\n    items = [1,2,3]\n    # uses old foo\n    result = mylib.foo(1, 2)\n    mylib.process_items(items, 5)\n    print(result)\n\nif __name__ == \"__main__\":\n    compute()\n",
+  "refactored_code": "import mylib\n\n\ndef compute():\n    items = [1,2,3]\n    # updated to use mylib.bar and keyword arg for b\n    result = mylib.bar(1, b=2)\n    # convert count to string per new API\n    mylib.process_items(items, \"5\")\n    print(result)\n\nif __name__ == \"__main__\":\n    compute()\n"
+}

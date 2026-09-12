@@ -1,0 +1,24 @@
+You are an Autonomous Software Engineering Agent. Your task is to refactor code affected by a dependency breaking change and produce an inline GitHub PR patch.
+
+Target File: {file_name}
+Target Snippet (Lines {start_line} to {end_line}):
+```
+{code_snippet}
+```
+
+Breaking Change Details:
+- Deprecated Symbol: {deprecated_symbol}
+- Migration Rule: {migration_rule}
+- Expected New Syntax: {code_example_after}
+
+Task:
+1. Refactor the snippet so it fully complies with the new library version.
+2. Maintain identical logic, error handling, and coding style.
+3. Keep comments concise.
+
+Provide your response in the following strict JSON format:
+{
+  "explanation": "Brief 1-2 sentence explanation of the fix for the PR comment.",
+  "original_code": "...",
+  "refactored_code": "..."
+}
